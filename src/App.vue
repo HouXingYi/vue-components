@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <div class="top">
-      <span class="topTitle">vue组件</span><br>
-      <span class="descrip">平常一些常用的组件，慢慢积累</span>
-    </div>
-    <div class="nav">
+    <div class="side-nav">
       <ul>
-        <li class="item"><router-link to="/Hello">Hello</router-link></li>
-        <li class="item"><router-link to="/Radio">Radio</router-link></li>
+        <li class="item"><router-link class="itemlink" to="/Hello">Hello</router-link></li>
+        <li class="item"><router-link class="itemlink" to="/Radio">Radio组件</router-link></li>
       </ul>
     </div>   
-    <router-view></router-view><!-- 路由匹配到的组件将渲染在这里 -->
+    <div class="cBody">
+      <span class="topTitle">vue组件</span><br>
+      <span class="descrip">平常一些常用的组件，慢慢积累</span>
+      <router-view></router-view><!-- 路由匹配到的组件将渲染在这里 -->
+    </div>
   </div>
 </template>
 
@@ -21,51 +21,49 @@ export default {
 </script>
 
 <style lang="scss" >
-
-body{
-  background: rgb(221, 221 , 221);
-}
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  .top{
-    height: 100px;
-    .topTitle{
-      font-size: 35px;
-      font-weight: bold;
-    }
-    .descrip{
-      line-height: 30px;
-    }
-  }
-  .nav{
-    ul{
-      display: flex;
-      margin: 0;
-      padding: 0;
-      background: #000;
+  #app{
+    .side-nav{
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom:0;
+      width: 300px; 
+      color: #364149;
+      background: #fafafa;
+      border-right: 1px solid rgba(0,0,0,.07);
       li.item{
-        list-style-type: none;
-        flex-grow: 1;
-        height: 50px;
-        border-right: 1px solid #e5e5e5;
-        text-align: center;
-        &:hover{
-          background: #fff;
-          a{
-            color: #000;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 20px;
+        border-bottom: 1px solid rgba(0,0,0,.07);
+        .itemlink{
+          display: block;
+          text-decoration: none;
+          color: #364149;
+          &.router-link-active{
+            color: #42b983;
           }
         }
-        a{
-          display: block;
-          height: 50px;
-          line-height: 50px;
-          color: #fff;
-        }
+      } 
+    }
+    .cBody{
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 300px;
+      bottom: 0;
+      color: #000;
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      .topTitle{
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .descrip{
+        display: block;
+        margin-bottom: 20px;
       }
     }
   }
-}
 </style>

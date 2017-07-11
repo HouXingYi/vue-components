@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <h1>Hello World!</h1>
     <span>{{msg}}</span>
   </div>
 </template>
@@ -10,7 +9,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to my vue components'
+      msg: 'HELLO WORLD!'
     }
   }
 }

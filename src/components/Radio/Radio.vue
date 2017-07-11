@@ -1,6 +1,5 @@
 <template>
   <div class="Radio">
-    <span class="title">Radio组件</span>
     <br>
     <Radio class="radio" v-model="rad" label="大众1">大众</Radio>
     <Radio class="radio" v-model="rad" label="丰田2">丰田</Radio>
