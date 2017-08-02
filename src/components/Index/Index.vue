@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="index">
     <span>{{msg}}</span>
   </div>
 </template>
